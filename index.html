@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn-like User Profile</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            background-color: #f5f5f5;
+        }
+
+        #menu-bar {
+            background-color: #0077b5;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        #logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        #search-bar {
+            flex-grow: 1;
+            margin: 0 20px;
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        #menu-icons {
+            display: flex;
+            align-items: center;
+        }
+
+        .menu-icon {
+            margin-right: 20px;
+            cursor: pointer;
+        }
+
+        #content-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px;
+        }
+
+        #user-profile {
+            width: 20%;
+            background-color: #f5f5f5;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+
+        #user-photo {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        #professional-skills,
+        #qualifications {
+            margin-bottom: 20px;
+        }
+
+        #professional-skills h3,
+        #qualifications h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        #professional-skills ul,
+        #qualifications p {
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        #post-container {
+            width: 60%;
+            background-color: #fff;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+
+        #post-header {
+            padding: 20px;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        #user-info {
+            flex-grow: 1;
+        }
+
+        #post-content {
+            padding: 20px;
+            word-wrap: break-word;
+        }
+
+        #post-actions {
+            padding: 10px 20px;
+            border-top: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #like-button, #comment-button, #share-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            color: #555;
+        }
+
+        #like-icon, #comment-icon, #share-icon {
+            margin-right: 5px;
+        }
+
+        #like-count {
+            margin-left: 5px;
+            font-weight: bold;
+        }
+
+        #comment-section {
+            margin-top: 20px;
+        }
+
+        #comment-input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-bottom: 1px solid #ddd;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+
+        .comment {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .comment-avatar {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .comment-text {
+            flex-grow: 1;
+        }
+
+        #share-count {
+            margin-right: 10px;
+        }
+
+        #footer {
+            background-color: #ddd;
+            padding: 10px;
+            text-align: center;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+
+<div id="menu-bar">
+    <div id="logo">Logo</div>
+    <input type="text" id="search-bar" placeholder="Search...">
+    <div id="menu-icons">
+        <div class="menu-icon">Home</div>
+        <div class="menu-icon">My Network</div>
+        <div class="menu-icon">Jobs</div>
+        <div class="menu-icon">Notifications</div>
+        <div class="menu-icon">Settings</div>
+    </div>
+</div>
+
+<div id="content-container">
+    <div id="user-profile">
+        <img id="user-photo" src="https://placekitten.com/300/200" alt="User Photo">
+        <div id="professional-skills">
+            <h3>Professional Skills</h3>
+            <ul>
+                <li>Software Development</li>
+                <li>Cloud Technologies</li>
+                <li>JavaScript</li>
+                <li>React</li>
+                <li>Node.js</li>
+            </ul>
+        </div>
+        <div id="qualifications">
+            <h3>Qualifications</h3>
+            <p>Bachelor's Degree in Computer Science</p>
+            <p>Master's Degree in Software Engineering</p>
+            <p>Certification in Cloud Computing</p>
+        </div>
+    </div>
+
+    <div id="post-container">
+        <div id="post-header">
+            <img id="user-avatar" src="https://placekitten.com/40/40" alt="User Avatar">
+            <div id="user-info">
+                <p>Adarsh Patel</p>
+                <p>2 hours ago</p>
+            </div>
+            <button>...</button>
+        </div>
+
+        <div id="post-content">
+            <p>🚀 Exciting News! 🚀<br><br>
+                Dear Students,<br><br>
+                I hope this message finds you well. As we wrap up our 2-day hands-on workshop in software development with cloud technologies, I wanted to take a moment to express my sincere gratitude to each one of you.<br><br>
+                Your enthusiasm, dedication, and eagerness to learn have truly made these past two days unforgettable. It's inspiring to see how you've embraced new concepts and technologies in the world of software development and the cloud.<br><br>
+                I hope this workshop has been a valuable learning experience for you. Whether it's exploring Microsoft technologies, diving into hands-on coding, or understanding the principles of cloud development, your active participation has made it a success.<br><br>
+                I encourage you to reflect on your journey over the past two days. If you've gained new insights, conquered challenges, or found joy in the process of building software solutions, I'd love to hear about it.<br><br>
+                Feel free to share your thoughts and experiences here. Your feedback is not only valuable to me but also to your peers who might find inspiration in your journey.<br><br>
+                Let's celebrate the power of learning together! 🌟<br><br>
+                Tag your professor, me [Adarsh Patel], Microsoft, and Edunetfounastrion in your posts so we can join in the celebration.<br><br>
+                Keep coding, keep learning, and always reach for the stars! 🚀<br><br>
+                Best regards, Adarsh Patel</p>
+        </div>
+
+        <div id="post-actions">
+            <button id="like-button" onclick="toggleLike()">
+                <span id="like-icon">👍</span>
+                <span id="like-count">0</span>
+            </button>
+            <button id="comment-button">
+                <span id="comment-icon">💬</span> Comment
+            </button>
+            <button id="share-button">
+                <span id="share-icon">🔗</span> Share
+            </button>
+            <span id="share-count">0 Shares</span>
+        </div>
+
+        <div id="comment-section" style="display: none;">
+            <input type="text" id="comment-input" placeholder="Add a comment...">
+            <div class="comment">
+                <img class="comment-avatar" src="https://placekitten.com/30/30" alt="User Avatar">
+                <div class="comment-text">Great workshop! Learned a lot. Looking forward to more sessions.</div>
+            </div>
+            <!-- Add more comments dynamically as needed -->
+        </div>
+    </div>
+</div>
+
+<div id="footer">
+    <p>© 2024 Your Company. All rights reserved.</p>
+</div>
+
+<script>
+    let isLiked = false;
+    let likeCount = 0;
+
+    function toggleLike() {
+        isLiked = !isLiked;
+        likeCount = isLiked ? likeCount + 1 : likeCount - 1;
+        updateLikeUI();
+    }
+
+    function updateLikeUI() {
+        const likeIcon = document.getElementById('like-icon');
+        const likeCountElement = document.getElementById('like-count');
+
+        likeIcon.textContent = isLiked ? '👍' : '👍';
+        likeCountElement.textContent = likeCount;
+    }
+</script>
+
+</body>
+</html>
